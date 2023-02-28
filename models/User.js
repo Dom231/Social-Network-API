@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
+const Thought = require('./Thoughts');
 
 const userSchema = new mongoose.Schema({
-    username:{}, 
-    email:{}, 
-    thoughts:{},
-    friends:{} 
+    username:{type: String,
+        required: true 
+    }, 
+    email:{type:String,
+        required: true}, 
+    thoughts:[Thought],
+    friends:[User.id] 
 }, 
 {
     toJSON: {
