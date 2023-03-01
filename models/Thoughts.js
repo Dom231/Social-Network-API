@@ -7,7 +7,7 @@ const thoughtSchema = new mongoose.Schema({
         minLength: 1,
         maxLength: 280,}, 
     CreatedAt:{type: Date}, 
-    userName:{type: String,
+    username:{type: String,
         required: true}, 
     reactions:[Reaction]
 }, 
