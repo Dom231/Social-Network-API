@@ -20,11 +20,5 @@ const thoughtSchema = new mongoose.Schema({
 
 const Thought = mongoose.model('Thought', thoughtSchema);
 
-const handleError = (err) => console.error(err); 
-
-Thought.create(
-    {}, 
-    (err) => (err ? handleError(err): console.log('Created new document'))
-    );
 
 module.exports = Thought;

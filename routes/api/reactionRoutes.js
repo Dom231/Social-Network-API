@@ -1,18 +1,18 @@
-const router = require('express').Router();
-const {
+// const router = require('express').Router();
+// const {
   
  
-  createReaction,
+//   createReaction,
 
-  deleteReaction,
-} = require('../../controllers/courseController.js');
+//   deleteReaction,
+// } = require('../../controllers/reactionController.js');
 
-// /api/userss
-router.route('/').post(createReaction);
+// // /api/userss
+// router.route('/').post(createReaction);
 
-// /api/users/:userId
-router
-  .route('/:userId')
-  .delete(deleteReaction);
+// // /api/users/:userId
+// router
+//   .route('/:userId')
+//   .delete(deleteReaction);
 
-module.exports = router;
+// module.exports = router;

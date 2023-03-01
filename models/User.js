@@ -1,14 +1,18 @@
-const mongoose = require('mongoose');
+const {Schema, model} = require('mongoose');
 const Thought = require('./Thoughts');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     username:{type: String,
         required: true 
     }, 
     email:{type:String,
         required: true}, 
-    thoughts:[Thought],
-    friends:[User.id] 
+    thoughts:[
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Thought',
+        },
+      ]
 }, 
 {
     toJSON: {
@@ -17,13 +21,8 @@ const userSchema = new mongoose.Schema({
     id: false,
   });
 
-const User = mongoose.model('User', userSchema);
+const User = model('User', userSchema);
 
-const handleError = (err) => console.error(err); 
 
-User.create(
-    {}, 
-    (err) => (err ? handleError(err): console.log('Created new document'))
-    );
 
 module.exports = User;

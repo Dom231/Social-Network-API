@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const {Schema,Types} = require('mongoose');
 
-const reactionSchema = new mongoose.Schema({
+const reactionSchema = new Schema({
     reactionId:{type: Schema.Types.ObjectId,
         default: () => new Types.ObjectId(),}, 
     reactionBody:{type: String,
@@ -21,11 +21,8 @@ const reactionSchema = new mongoose.Schema({
 
 
 
-const handleError = (err) => console.error(err); 
 
-Reaction.create(
-    {}, 
-    (err) => (err ? handleError(err): console.log('Created new document'))
-    );
+
+
 
 module.exports = reactionSchema;
